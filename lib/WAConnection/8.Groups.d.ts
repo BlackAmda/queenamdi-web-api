@@ -8,7 +8,7 @@ export declare class WAConnection extends Base {
     }>;
     /**
      * Get the metadata of the group
-     * Baileys automatically caches & maintains this state
+     * AmdiWeb automatically caches & maintains this state
      */
     groupMetadata(jid: string): Promise<WAGroupMetadata>;
     /** Get the metadata of the group from WA */

@@ -1,6 +1,6 @@
 {
   "name": "@blackamda/queenamdi-web-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WhatsApp Web API for Queen Amdi User Bot.",
   "homepage": "https://github.com/BlackAmda/queenamdi-web-api",
   "main": "lib/index.js",
@@ -16,7 +16,15 @@
     "automation"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 240000 -r ts-node/register src/Tests/Tests.*.ts",
+    "prepare": "tsc",
+    "lint": "eslint '*/*.ts' --quiet --fix",
+    "build:all": "tsc && typedoc",
+    "build:docs": "typedoc",
+    "build:tsc": "tsc",
+    "example": "node --inspect -r ts-node/register Example/example.ts",
+    "gen-protobuf": "bash src/Binary/GenerateStatics.sh",
+    "browser-decode": "yarn ts-node src/BrowserMessageDecoding.ts"
   },
   "author": "Black Amda",
   "license": "MIT",

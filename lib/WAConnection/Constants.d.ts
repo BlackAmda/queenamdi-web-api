@@ -58,13 +58,13 @@ export interface WALocationMessage {
 }
 /** Reverse stub type dictionary */
 export declare const WA_MESSAGE_STUB_TYPES: Record<number, string>;
-export declare class BaileysError extends Error {
+export declare class AmdiWebError extends Error {
     status?: number;
     context: any;
     constructor(message: string, context: any, stack?: string);
 }
-export declare const TimedOutError: (stack?: string) => BaileysError;
-export declare const CancelledError: (stack?: string) => BaileysError;
+export declare const TimedOutError: (stack?: string) => AmdiWebError;
+export declare const CancelledError: (stack?: string) => AmdiWebError;
 export interface WAQuery {
     json: any[] | WANode;
     binaryTags?: WATag;
@@ -482,4 +482,4 @@ export declare const MimetypeMap: {
     stickerMessage: Mimetype;
 };
 export declare type WAParticipantAction = 'add' | 'remove' | 'promote' | 'demote';
-export declare type BaileysEvent = 'open' | 'connecting' | 'close' | 'ws-close' | 'qr' | 'connection-phone-change' | 'contacts-received' | 'chats-received' | 'initial-data-received' | 'chat-new' | 'chat-update' | 'group-participants-update' | 'group-update' | 'received-pong' | 'blocklist-update' | 'contact-update';
+export declare type AmdiWebEvent = 'open' | 'connecting' | 'close' | 'ws-close' | 'qr' | 'connection-phone-change' | 'contacts-received' | 'chats-received' | 'initial-data-received' | 'chat-new' | 'chat-update' | 'group-participants-update' | 'group-update' | 'received-pong' | 'blocklist-update' | 'contact-update';

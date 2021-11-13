@@ -1,5 +1,5 @@
 import { WAConnection as Base } from './3.Connect';
-import { WAMessage, WAContact, WAChat, WA_MESSAGE_STATUS_TYPE, PresenceUpdate, BaileysEvent, DisconnectReason, WAOpenResult, WAParticipantAction, WAGroupMetadata, WAChatUpdate, BlocklistUpdate, WAContactUpdate } from './Constants';
+import { WAMessage, WAContact, WAChat, WA_MESSAGE_STATUS_TYPE, PresenceUpdate, AmdiWebEvent, DisconnectReason, WAOpenResult, WAParticipantAction, WAGroupMetadata, WAChatUpdate, BlocklistUpdate, WAContactUpdate } from './Constants';
 export declare class WAConnection extends Base {
     constructor();
     protected sendChatsQuery(epoch: number): Promise<string>;
@@ -81,6 +81,6 @@ export declare class WAConnection extends Base {
     on(event: 'received-pong', listener: () => void): this;
     /** when a user is blocked or unblockd */
     on(event: 'blocklist-update', listener: (update: BlocklistUpdate) => void): this;
-    on(event: BaileysEvent | string, listener: (json: any) => void): this;
-    emit(event: BaileysEvent | string, ...args: any[]): boolean;
+    on(event: AmdiWebEvent | string, listener: (json: any) => void): this;
+    emit(event: AmdiWebEvent | string, ...args: any[]): boolean;
 }
